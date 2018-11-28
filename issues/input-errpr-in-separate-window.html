@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://unpkg.com/react@16.6.3/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.6.3/umd/react-dom.development.js"></script>
+
+  <title>input component error in a separate window</title>
+</head>
+
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <script>
+    (function () {
+      var features = 'resizable=yes,width=1024,height=773' +
+        ',innerWidth=1024,innerHeight=773,' +
+        'left=256,top=16,scrollbars=no,' +
+        'status=x,toolbar=no,menubar=no';
+
+      var newWindow = window.open('', 'TEST', features);
+
+      if (!newWindow) {
+        alert('Disable popup blocker, plz');
+      }
+
+      var o = React.createElement;
+      function Form() {
+        return o('form', {}, o('input', {
+          defaultValue: 'foo'
+        }))
+      }
+      var root = newWindow.document.createElement('div');
+      newWindow.document.body.appendChild(root);
+      ReactDOM.render(o(Form), root);
+    })();
+  </script>
+
+</body>
+</html>
