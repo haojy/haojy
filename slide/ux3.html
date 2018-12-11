@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Keynote</title>
+  <style>
+    body {
+      font-family: '-apple-system';
+    }
+      h1, h2, h3 {
+        font-family: '-apple-system';
+        font-weight: normal;
+      }
+
+    .remark-slide-content {
+      font-size: 32px;
+    }
+
+    .remark-slide-content img{
+      width: 680px;
+    }
+    .remark-code {
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <textarea id="source"></textarea> 
+  <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+  <script>
+    const slideshow = remark.create({
+      sourceUrl: './ux3-techs.md',
+      ratio: '16:9',
+      highlightLanguage: 'javascript',
+      highlightStyle: 'monokai',
+    })
+  </script>
+</body>
+</html>
